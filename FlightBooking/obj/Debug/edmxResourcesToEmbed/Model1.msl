@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="flight_bookingModelStoreContainer" CdmEntityContainer="FlightbookingEntities">
+    <EntitySetMapping Name="row_details">
+      <EntityTypeMapping TypeName="flight_bookingModel.row_details">
+        <MappingFragment StoreEntitySet="row_details">
+          <ScalarProperty Name="row_id" ColumnName="row_id" />
+          <ScalarProperty Name="row_no" ColumnName="row_no" />
+          <ScalarProperty Name="seats_filled" ColumnName="seats_filled" />
+          <ScalarProperty Name="is_row_occupied" ColumnName="is_row_occupied" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ticket">
+      <EntityTypeMapping TypeName="flight_bookingModel.Ticket">
+        <MappingFragment StoreEntitySet="Ticket">
+          <ScalarProperty Name="applicant_id" ColumnName="applicant_id" />
+          <ScalarProperty Name="applicant_name" ColumnName="applicant_name" />
+          <ScalarProperty Name="row_no" ColumnName="row_no" />
+          <ScalarProperty Name="seat_no" ColumnName="seat_no" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

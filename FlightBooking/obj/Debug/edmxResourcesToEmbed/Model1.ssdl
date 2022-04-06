@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="flight_bookingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="row_details">
+    <Key>
+      <PropertyRef Name="row_id" />
+    </Key>
+    <Property Name="row_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="row_no" Type="varchar" MaxLength="50" />
+    <Property Name="seats_filled" Type="varchar" MaxLength="50" />
+    <Property Name="is_row_occupied" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Ticket">
+    <Key>
+      <PropertyRef Name="applicant_id" />
+    </Key>
+    <Property Name="applicant_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="applicant_name" Type="varchar" MaxLength="50" />
+    <Property Name="row_no" Type="varchar" MaxLength="50" />
+    <Property Name="seat_no" Type="int" />
+  </EntityType>
+  <EntityContainer Name="flight_bookingModelStoreContainer">
+    <EntitySet Name="row_details" EntityType="Self.row_details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ticket" EntityType="Self.Ticket" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="flight_bookingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="row_details">
+    <Key>
+      <PropertyRef Name="row_id" />
+    </Key>
+    <Property Name="row_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="row_no" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="seats_filled" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="is_row_occupied" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Ticket">
+    <Key>
+      <PropertyRef Name="applicant_id" />
+    </Key>
+    <Property Name="applicant_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="applicant_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="row_no" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="seat_no" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="FlightbookingEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="row_details" EntityType="Self.row_details" />
+    <EntitySet Name="Ticket" EntityType="Self.Ticket" />
+  </EntityContainer>
+</Schema>

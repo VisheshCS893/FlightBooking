@@ -1,0 +1,68 @@
+﻿@model IEnumerable<FlightBooking.row_details>
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>viewTicketDetails</title>
+</head>
+<body>
+  <br/>
+  <br/>
+    <table>
+        <tr>
+            @{
+                <td>Row No</td>
+                for (int i = 1; i <= 7; i++)
+                {
+                    <td style="text-align:center"> @i</td>
+                }
+            }
+        </tr>
+
+        @foreach (var item in Model)
+        {
+
+
+
+        <tr>
+            <td>@item.row_no</td>
+            @{
+                for (int i = 1; i <= 7; i++)
+                {
+                    if (!String.IsNullOrEmpty(item.seats_filled))
+                    {
+                        List<string> seats = item.seats_filled.Split(',').ToList<string>();
+                        if (seats.Contains(i.ToString()))
+                        {
+                            <td style="background-color:grey; color:white"><a href="viewTicketDetails?rowNo=@item.row_no&seatNo=@i">Occupied</a></td>
+                        }
+                        else
+                        {
+                            <td><a href="/Home/Index">book</a></td>
+                        }
+
+                    }
+                    else
+                    {
+
+                        <td><a href="/Home/Index">book</a></td>
+
+                    }
+
+
+                }
+
+            }
+
+        </tr>
+
+        }
+
+
+    </table>
+</body>
+</html>

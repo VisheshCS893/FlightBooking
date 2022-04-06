@@ -1,0 +1,50 @@
+﻿@model IEnumerable<FlightBooking.Ticket>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>BookTicket</title>
+</head>
+<body>
+    <p>
+
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Row No
+            </th>
+            <th>
+               Seat No
+            </th>
+          
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @item.applicant_name
+            </td>
+            <td>
+                @item.row_no
+            </td>
+            <td>
+                @item.seat_no
+            </td>
+            
+            
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>
